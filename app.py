@@ -26,7 +26,7 @@ def encode_image(image: Image.Image) -> str:
 # ----------- Function to Generate Caption ----------- #
 def generate_caption(instruction: str, image_base64: str, model="gpt-4-turbo") -> str:
     """
-    Sends image and instruction to GPT-4-turbo to generate a caption.
+    Sends image and instruction to GPT-4-turbo to generate multiple caption.
     """
     try:
         response = client.chat.completions.create(
@@ -69,7 +69,7 @@ instruction = st.text_input("Instruction (e.g., 'Write a poetic caption')", "")
 st.write("")
 
 # Button to Trigger Caption Generation
-if st.button("✨ Generate Caption"):
+if st.button("✨ Generate Captions"):
     if not uploaded_file:
         st.warning("Please upload an image.")
     elif not instruction.strip():
@@ -79,7 +79,7 @@ if st.button("✨ Generate Caption"):
         image = Image.open(uploaded_file)
         st.image(image, caption="Uploaded Image", use_container_width=True)
 
-        with st.spinner("Generating caption with GPT-4 Turbo..."):
+        with st.spinner("Generating captions with GPT-4 Turbo..."):
             # Encode image
             base64_img = encode_image(image)
 
@@ -87,5 +87,5 @@ if st.button("✨ Generate Caption"):
             caption = generate_caption(instruction.strip(), base64_img)
 
         # Display the generated caption
-        st.subheader("📝 Generated Caption")
+        st.subheader("📝 Generated Captions")
         st.write(caption)
