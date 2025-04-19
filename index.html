@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Image Caption Generator</title>
+    <style>
+        /* Full-screen background image */
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url('background.jpg'); /* Replace with your image path or URL */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Semi-transparent overlay for better readability */
+        .overlay {
+            background-color: rgba(255, 255, 255, 0.8);
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* iFrame styling */
+        iframe {
+            width: 90%;
+            height: 90%;
+            border: none;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="overlay">
+        <!-- Replace with your actual Streamlit app URL -->
+        <iframe src="https://captioniser.streamlit.app"></iframe>
+    </div>
+</body>
+</html>
