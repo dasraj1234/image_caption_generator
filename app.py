@@ -10,10 +10,9 @@ from io import BytesIO
 
 # Load environment variables
 load_dotenv()
-api_key = os.getenv("OPENAI_API_KEY")
 
 # Create OpenAI client
-client = OpenAI(api_key=api_key)
+client = OpenAI(api_key = os.getenv("OPENAI_API_KEY"))
 
 # ----------- Function to Convert Image to Base64 ----------- #
 def encode_image(image: Image.Image) -> str:
