@@ -26,7 +26,7 @@ def encode_image(image: Image.Image) -> str:
 # ----------- Function to Generate Caption ----------- #
 def generate_caption(instruction: str, image_base64: str, model="gpt-4-turbo") -> str:
     """
-    Sends image and instruction to GPT-4-turbo to generate multiple caption.
+    Sends image and instruction to GPT-4-turbo to generate multiple captions.
     """
     try:
         response = client.chat.completions.create(
